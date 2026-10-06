@@ -28,6 +28,7 @@ intents.members = True
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
+os.makedirs("data", exist_ok=True)
 db = sqlite3.connect("data/glowai.db")
 db.execute("""CREATE TABLE IF NOT EXISTS warnings (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
